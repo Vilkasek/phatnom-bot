@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"phantom-bot/commands"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -17,6 +18,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("Nie udało się zainicjalizować bota: %v", err)
 	}
+
+	bot.AddHandler(commands.Setup)
 
 	err = bot.Open()
 	if err != nil {
