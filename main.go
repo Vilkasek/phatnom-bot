@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"phantom-bot/commands"
+	"phantom-bot/utils"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -20,6 +21,7 @@ func main() {
 	}
 
 	bot.AddHandler(commands.Setup)
+	bot.AddHandler(utils.Logger)
 
 	err = bot.Open()
 	if err != nil {
